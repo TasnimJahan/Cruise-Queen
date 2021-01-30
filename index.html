@@ -27,9 +27,8 @@
     </header>
 
 
-    <main class="main-content container">
-
-        <!-----Booking Section----->
+    <!-----Booking Section----->
+    <main id="bookingArea" class="main-content container">
         <div class="booking-content">
             <h1>Cruise Queen</h1>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
@@ -38,7 +37,7 @@
         </div>
 
 
-        <div id="bookingArea" class="booking-form">
+        <div class="booking-form">
             <h3>Book Ocean Time</h3>
             <div class="input-group">
                 <label for="">Flying From</label>
@@ -90,7 +89,7 @@
                         <p>Subtotal</p>
                     </div>
                     <div class="right">
-                        <p>$ <span id="subTotal">500</span></p>
+                        <p>$ <span id="subTotal">00</span></p>
                     </div>
                 </div>
 
@@ -99,7 +98,7 @@
                         <p>Charge 10% VAT</p>
                     </div>
                     <div class="right">
-                        <p>$ <span id="tax">50</span></p>
+                        <p>$ <span id="tax">00</span></p>
                     </div>
                 </div>
                 <hr>
@@ -108,22 +107,21 @@
                         <h4>Total</h4>
                     </div>
                     <div class="right">
-                        <p>$ <span id="total">550</span></p>
+                        <p>$ <span id="total">00</span></p>
                     </div>
                 </div>
             </div>
             <!-- <button id="bookingButton" class="btn-style">Book Now</button> -->
             <button onclick="submissionMessage()" class="btn-style booking">Book Now</button>
         </div>
-
-        <!-----Confirmation Section----->
-        <div id="confirmation-area">
-            <h2> <span style="color: red;">CONGRATULATIONS!!</span> You have successfully booked "<span
-                    id="firstClassTicket">0</span>" First Class Ticket and "<span id="economyClassTicket">0</span>"
-                Economy Class ticket.</h2>
-        </div>
     </main>
 
+    <!-----Confirmation Section----->
+    <section id="confirmation-area">
+        <h2> <span style="color: red;">CONGRATULATIONS!!</span> You have successfully booked "<span
+                id="firstClassTicket">0</span>" First Class Ticket and "<span id="economyClassTicket">0</span>"
+            Economy Class ticket with $<span id="totalWithTax">0</span> including VAT.</h2>
+    </section>
 
     <!--Thank You-->
 
@@ -136,7 +134,7 @@
                 document.getElementById("bookingArea").style.display = "none";
                 document.getElementById("confirmation-area").style.display = "block"
             } else {
-                alert("You have not booked any ticket yet");
+                alert("SORRY!! You have not booked any ticket yet.");
             }
         }
 
@@ -175,6 +173,7 @@
             // total price
             let total = subTotalPrice + tax;
             document.getElementById("total").innerText = total;
+            document.getElementById("totalWithTax").innerText = total;
         }
     </script>
 </body>
