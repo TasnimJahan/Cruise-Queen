@@ -123,22 +123,10 @@
             Economy Class ticket with $<span id="totalWithTax">0</span> including VAT.</h2>
     </section>
 
+
     <!--Thank You-->
 
     <script>
-        // submission message
-        function submissionMessage() {
-            let numberOfFirstClassTicket = parseInt(document.getElementById("firstClassTicketCount").value);
-            let numberOfEconomyClassTicket = parseInt(document.getElementById("economyClassTicketCount").value);
-            if (numberOfFirstClassTicket > 0 || numberOfEconomyClassTicket > 0) {
-                document.getElementById("bookingArea").style.display = "none";
-                document.getElementById("confirmation-area").style.display = "block"
-            } else {
-                alert("SORRY!! You have not booked any ticket yet.");
-            }
-        }
-
-
         // Total number of ticket
         function ticketHandle(isIncrease, ticketClass) {
             //number of ticket
@@ -174,6 +162,19 @@
             let total = subTotalPrice + tax;
             document.getElementById("total").innerText = total;
             document.getElementById("totalWithTax").innerText = total;
+        }
+
+
+        // submission message
+        function submissionMessage() {
+            let numberOfFirstClassTicket = parseInt(document.getElementById("firstClassTicketCount").value);
+            let numberOfEconomyClassTicket = parseInt(document.getElementById("economyClassTicketCount").value);
+            if (numberOfFirstClassTicket > 0 || numberOfEconomyClassTicket > 0) {
+                document.getElementById("bookingArea").style.display = "none";
+                document.getElementById("confirmation-area").style.display = "block"
+            } else {
+                alert("SORRY!! You have not booked any ticket yet.");
+            }
         }
     </script>
 </body>
